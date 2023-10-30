@@ -16,12 +16,7 @@ namespace ConsoleUI
 
             try
             {
-                IMessages msg = services.GetRequiredService<IMessages>();
-
-                Console.WriteLine(msg.SayHello());
-                Console.WriteLine(msg.SayGoodbye());
-
-                Console.ReadLine();
+                services.GetRequiredService<App>().Run();
             }
             catch (Exception ex)
             {
@@ -38,6 +33,7 @@ namespace ConsoleUI
                 .ConfigureServices((_, services) =>
                 {
                     services.AddTransient<IMessages, Messages>();
+                    services.AddTransient<App>();
                 });
 
     }
