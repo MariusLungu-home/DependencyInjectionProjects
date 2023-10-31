@@ -1,0 +1,11 @@
+﻿@page "/"
+@inject IMessages messages
+
+<PageTitle>Index</PageTitle>
+
+
+<h2>@messages.SayHello()</h2>
+<h2>@messages.SayGoodbye()</h2>
+
+
+<SurveyPrompt Title="How is Blazor working for you?" />
